@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.text-menu {
+    font-family: "Satisfy", cursive;
+    font-size: 40px;
+}
+
+.text-set {
+     font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+}
+
+
+.drawer-text {
+    h2 {
+        font-family: "Satisfy", cursive;
+        font-weight: 200;
+    }
+
+    li {
+        font-weight: 500;
+        font-size: 18px;
+    }
+}
+
+.text-content {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+}
+
+.text-content.active {
+    max-height: 100px; 
+    opacity: 1;
+    transform: scale(1);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#overlay {
+    display: none;
+    animation: fadeIn 0.3s forwards;
+}
+
+#overlay.active {
+    display: flex;
+}
+
+#overlay-content {
+    transform: scale(0.9);
+    opacity: 0;
+    animation: zoomIn 0.3s forwards;
+}
+
+
+@keyframes fadeIn {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.box {
+    h2{
+        font-family: "Satisfy", cursive;
+    }
+}

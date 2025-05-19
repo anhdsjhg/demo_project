@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Пробный сайт</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100">
+
+  <input type="checkbox" id="drawer-toggle" class="peer hidden">
+
+  <div class="flex justify-between p-5 items-center bg-white shadow-lg fixed w-[100%] z-20">
+    <img src="./assets/logo-sushi.png" class="w-[120px]">
+    <label for="drawer-toggle" class=" text-white  rounded-md cursor-pointer">
+      <img src="./assets/menu.png" class="w-[30px]">
+    </label>
+  </div>
+
+  <div class="fixed inset-0 bg-black bg-opacity-0 z-10 hidden peer-checked:block"></div>
+
+  <div
+    class="drawer-text fixed right-0 top-[114px] w-64 h-full bg-white shadow-lg transform translate-x-full peer-checked:translate-x-0 transition-transform duration-300 z-20">
+    <div class="p-4 flex justify-between items-center border-b border-gray-200">
+      <h2 class="text-2xl font-semibold">Наши Услуги</h2>
+      <label for="drawer-toggle" class="cursor-pointer">✕</label>
+    </div>
+    <ul class="p-4 space-y-4">
+      <li><button id="addres" onclick="addres()" class="text-red-500 hover:text-red-700">Наш Адресс</button></li>
+      <li>
+        <p id="addres-text" class="text-content"></p>
+      </li>
+      <li><button id="grafic" onclick="grafic()" class="text-red-500 hover:text-red-700">График Работы</button></li>
+      <li>
+        <p id="grafic-text" class="text-content"></p>
+      </li>
+      <li><button id="contact" onclick="contact()" class="text-red-500 hover:text-red-700">Контакты</button></li>
+      <li>
+        <p id="contact-text" class="text-content"></p>
+      </li>
+    </ul>
+  </div>
+
+
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
+    <div id="overlay-content" class="p-5"></div>
+  </div>
+
+  <div class="container p-10 flex flex-col gap-5 pt-20">
+    <div class="text-3xl font-bold mb-5">Меню</div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 box">
+      
+      <div class="bg-white p-5 rounded-lg shadow-lg">
+        <img src="./assets/set03.png" class="w-full h-52 object-cover rounded-lg mb-3">
+        <h2 class="text-lg font-semibold">Позитив</h2>
+        <p class="text-red-500 text-lg mb-2 font-semibold">5990 тг</p>
+        <button
+          onclick="showDetails('Позитив', '5990', './assets/set03.png', '20шт Филадельфия<br> 10шт Калифорния<br> 20шт Цезарь жаренный<br> 20шт Краб жаренный<br> 10шт Лосось жаренный<br> 10шт Каппа маки')"
+          class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">Подробнее</button>
+      </div>
+
+      
+      <div class="bg-white p-5 rounded-lg shadow-lg">
+        <img src="./assets/set02.png" class="w-full h-52 object-cover rounded-lg mb-3">
+        <h2 class="text-lg font-semibold">Мадрид</h2>
+        <p class="text-red-500 text-lg mb-2 font-semibold">4500 тг</p>
+        <button onclick="showDetails('Мадрид', '4500', './assets/set02.png', '10шт Филадельфия<br>10шт Калифорния<br>10шт Цезарь жаренный<br>10шт Сяке маки<br>12шт чикет')"
+          class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">Подробнее</button>
+      </div>
+
+      
+      <div class="bg-white p-5 rounded-lg shadow-lg">
+        <img src="./assets/set01.png" class="w-full h-52 object-cover rounded-lg mb-3">
+        <h2 class="text-lg font-semibold">Ямота</h2>
+        <p class="text-red-500 text-lg mb-2 font-semibold">7000 тг</p>
+        <button onclick="showDetails('Ямота', '7000', './assets/set01.png', 'Пицца пеперонни <br> Пицца Куриный <br> Маргарита <br> 10шт Филадельфия <br> 10шт Калифорния <br> 10шт Цезарь жаренный <br> 10шт Краб жаренный <br> 10шт Сяке маки <br> 10щт Капа маки')"
+          class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">Подробнее</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
